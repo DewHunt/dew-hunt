@@ -55,5 +55,21 @@
 				}
 			}
 		}
+
+		public function EditService($serviceId)
+		{
+			if ($this->session->userdata('adminUserName') == "" || $this->session->userdata('adminPassword') == "")
+			{
+				return redirect('Home/Login');
+			}
+			else
+			{
+				$data = array(
+					'serviceInfo' => $this->ServiceModel->GetServiceInfoById($serviceId)
+				);
+
+				$this->load->view('edit-service',$data);
+			}			
+		}
 	}
 ?>

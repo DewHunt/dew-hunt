@@ -65,5 +65,21 @@
 				return false;
 			}
 		}
+
+		public function GetServiceInfoById($serviceId)
+		{
+			$sql = "SELECT * FROM tbl_services WHERE Id = '$serviceId' AND Status = 1";
+
+			$query = $this->db->query($sql);
+
+			if ($query->num_rows() > 0)
+			{
+				return $query->row();
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 ?>
