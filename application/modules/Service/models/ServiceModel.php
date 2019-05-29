@@ -14,28 +14,11 @@
 
 		public function ServiceAdd()
 		{
-			// Start Copy Image and Get Image New Name
-			$config['upload_path'] = "assets/web2/images/service/";
-			$config['allowed_types'] = "jpg|jpeg|png|gif";
-			$this->load->library('upload',$config);
+			$imagePath = "assets/web2/images/service/";
+			$imageName = $_FILES['icon-image']['name'];
+			$imageTitle = $this->input->post('service-title')."_icon";
 
-			$iconImage = $_FILES['icon-image']['name'];
-			// $slugName = $this->input->post('service-title');
-
-			if ($iconImage == "")
-			{
-				$dbImageName = "";
-			}
-			else
-			{
-				$extension = pathinfo($iconImage, PATHINFO_EXTENSION);
-				$slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '_', $this->input->post('service-title')));
-				$dbImageName = $slug."_icon.".$extension;
-				$copyImageName = $config['upload_path'].$dbImageName;
-
-				copy($_FILES['icon-image']['tmp_name'],$copyImageName);
-			}
-			// End Copy Image and Get Image New Name
+			$dbImageName = $this->CommonModel->AddImage($imagePath,$imageName,$imageTitle);
 
 			$data = array(
 				'Title' => $this->input->post('service-title'),
@@ -75,6 +58,45 @@
 			if ($query->num_rows() > 0)
 			{
 				return $query->row();
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		public function EditServiceAction($serviceId)
+		{
+			$imageName = $_FILES['icon-image']['name'];
+			$previousImageName = $this->input->post('previous-icon-image');
+			$imagePath = "assets/web2/images/service/";
+			$imageTitle = $this->input->post('service-title')."_icon";
+
+			$dbImageName = $this->CommonModel->UpdateImage($imageName,$previousImageName,$imagePath,$imageTitle);
+
+			$data = array(
+				'Title' => $this->input->post('service-title'),
+				'Icon' => $dbImageName,
+				'Description' => $this->input->post('service-description'),
+				'UpdateBy' => $this->session->userdata('adminId'),
+				'UpdateDateTime' => date('Y-m-d H:i:s')
+			);
+
+			$this->db->where('id',$serviceId);
+			$updateQuery = $this->db->update('tbl_services',$data);
+
+			return $updateQuery;
+		}
+
+		public function DeleteService($serviceId)
+		{
+			$sql = "DELETE FROM tbl_services WHERE Id = $serviceId AND Status = 1";
+
+			$query = $this->db->query($sql);
+
+			if ($query)
+			{
+				return true;
 			}
 			else
 			{

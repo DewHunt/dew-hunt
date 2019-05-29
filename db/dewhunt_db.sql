@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2019 at 11:45 PM
+-- Generation Time: May 30, 2019 at 12:21 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -159,8 +159,10 @@ CREATE TABLE `tbl_services` (
 --
 
 INSERT INTO `tbl_services` (`Id`, `Title`, `Icon`, `Description`, `CreateBy`, `CreateDateTime`, `UpdateBy`, `UpdateDateTime`, `DeleteBy`, `DeleteDateTime`, `Status`) VALUES
-(1, 'Web Development', 'web_development_icon.png', 'I am a profession Web Developer. I have developed several websites with PHP based framework CodeIgniter.', 1, '2019-05-20 22:52:47', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
-(2, 'Web Design', 'web_design_icon.png', 'I am a Professional Web Designer.', 1, '2019-05-24 16:10:43', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1);
+(1, 'Web Development.', 'web_development_ok_icon.png', 'I am a profession Web Developer. I have developed several websites with PHP based framework CodeIgniter.', 1, '2019-05-20 22:52:47', 1, '2019-05-29 16:41:38', 0, '0000-00-00 00:00:00', 1),
+(2, 'Web Design', 'web_design_icon.png', 'I am a Professional Web Designer.', 1, '2019-05-24 16:10:43', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
+(3, 'Test', 'test_icon.jpg', 'Test', 1, '2019-05-29 16:43:40', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
+(4, '', '', '', 1, '2019-05-29 23:28:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -313,7 +315,7 @@ ALTER TABLE `tbl_portfolios`
 -- AUTO_INCREMENT for table `tbl_services`
 --
 ALTER TABLE `tbl_services`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_services_footer`

@@ -56,6 +56,29 @@
                                     </div>
                                 </div><!-- end col-->
                             </div>
+                            
+                            <h4 class="mb-3 header-title">
+                                <?php
+                                    if ($this->session->has_userdata('msg'))
+                                    {
+                                ?>
+                                        <div class="alert alert-success text-center successMessage" id="success-msg">
+                                            <strong><?= $this->session->msg; ?></strong>
+                                        </div>
+                                <?php
+                                        $this->session->unset_userdata('msg');
+                                    }
+                                    elseif ($this->session->has_userdata('errMag'))
+                                    {
+                                ?>
+                                        <div class="alert alert-danger text-center" id="err-msg">
+                                            <strong><?= $this->session->msg; ?></strong>
+                                        </div>
+                                <?php
+                                        $this->session->unset_userdata('errMsg');
+                                    }
+                                ?>
+                            </h4>
     
                             <div class="table-responsive">
                                 <table class="table table-bordered table-centered table-hover mb-0">
@@ -82,8 +105,12 @@
                                                     <img src="<?= base_url(); ?>assets/web2/images/service/<?= $value->Icon; ?>" width="50px" height="50px">
                                                 </td>
                                                 <td>
-                                                    <a href="<?= base_url(); ?>Service/Service/EditService/<?= $value->Id; ?>" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="<?= base_url(); ?>Service/Service/DeleteService/<?= $value->Id; ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                    <a href="<?= base_url(); ?>Service/Service/EditService/<?= $value->Id; ?>" class="action-icon">
+                                                        <i class="mdi mdi-square-edit-outline"></i>
+                                                    </a>
+                                                    <a href="<?= base_url(); ?>Service/Service/DeleteService/<?= $value->Id; ?>" class="action-icon" onclick="return confirm('Are you sure want to delete?')">
+                                                        <i class="mdi mdi-delete"></i>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         <?php
@@ -92,6 +119,9 @@
                                         ?>
                                     </tbody>
                                 </table>
+                                                    
+                                <button id="confirm">Confirm</button>
+                                <button onclick="return show()">Confirm</button>
                             </div>
 
                         </div> <!-- end card-body-->
@@ -110,12 +140,50 @@
 <!-- End Page content -->
 <!-- ============================================================== -->
 
-            <script type="text/javascript">
-                setTimeout(function(){
-                    $('#success-msg').hide(1000);
-                    $('#err-msg').hide(1000);
-                },5000);
-            </script>
+<script type="text/javascript">
+    setTimeout(function(){
+        $('#success-msg').hide(1000);
+        $('#err-msg').hide(1000);
+    },5000);
+
+    $(document).ready(function(){
+        $('#confirm').on('click',function(){
+            alert("Working");
+            return false;
+            new duDialog('Confirm Dialog','Are You Sure', duDialog.OK_CANCEL,{
+                okText: 'Confirm',
+                callbacks: {
+                    okClick: function(){
+                        return true;
+                    }
+                },
+                cancelClick: {
+                    cancelClick: function(){
+                        return false;
+                    }
+                }
+            });
+        });
+    });
+
+    function show()
+    {
+        new duDialog('Confirm Dialog','Are You Sure', duDialog.OK_CANCEL,{
+            okText: 'Confirm',
+            callbacks: {
+                okClick: function(){
+                    return true;
+                }
+            },
+            cancelClick: {
+                cancelClick: function(){
+                    return false;
+                }
+            }
+        });
+
+    }
+</script>
 
 <?php echo $this->load->view('dashboard/include/footer.php'); ?>
 

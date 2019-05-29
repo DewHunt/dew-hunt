@@ -78,7 +78,7 @@
                                             ?>
                                         </h4>
 
-                                        <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Service/Service/ServiceAdd">
+                                        <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Service/Service/ServiceAddAction">
                                             <div class="form-group row mb-3">
                                                 <label for="inputEmail3" class="col-3 col-form-label">
                                                     Title <span class="text-danger">*</span>

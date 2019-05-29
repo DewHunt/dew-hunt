@@ -22,9 +22,6 @@
 
         <!-- duDialog CSS -->
         <link href="<?= base_url(); ?>assets/duDialog/css/duDialog.min.css" rel="stylesheet" type="text/css" />
-
-        <!-- PopUpModals CSS -->
-        <link href="<?= base_url(); ?>assets/PopUpModal/css/popupmodal.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>

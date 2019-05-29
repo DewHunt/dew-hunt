@@ -28,6 +28,11 @@
         </div>
         <!-- END wrapper -->
 
+        <!-- JQuery -->
+        <!-- <script src="<?= base_url(); ?>assets/dashboard/assets/jquery/jquery-1.12.4.min.js"></script> -->
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
         <!-- Vendor js -->
         <script src="<?= base_url(); ?>assets/dashboard/assets/js/vendor.min.js"></script>
 
@@ -54,8 +59,5 @@
         
         <!-- duDialog JS -->
         <script src="<?= base_url(); ?>assets/duDialog/js/duDialog.min.js"></script>
-        
-        <!-- PopUpModals JS -->
-        <script src="<?= base_url(); ?>assets/PopUpModal/js/popupmodal-min.js"></script>
     </body>
 </html>

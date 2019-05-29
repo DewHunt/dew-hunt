@@ -1,4 +1,4 @@
-edit-service.php<?php echo $this->load->view('dashboard/include/header.php'); ?>
+<?php echo $this->load->view('dashboard/include/header.php'); ?>
 <?php echo $this->load->view('dashboard/include/sidebar.php'); ?>
 
 
@@ -55,7 +55,7 @@ edit-service.php<?php echo $this->load->view('dashboard/include/header.php'); ?>
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Service/Service/ServiceAdd">
+                                        <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Service/Service/EditServiceAction">
                                             <div class="form-group row mb-3">
                                                 <label for="inputEmail3" class="col-3 col-form-label">
                                                     Title <span class="text-danger">*</span>
@@ -70,9 +70,7 @@ edit-service.php<?php echo $this->load->view('dashboard/include/header.php'); ?>
                                                     Description <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-9">
-                                                	<textarea class="form-control" rows="5" name="service-description" id="service-description" placeholder="Write Service Description">
-                                                		<?= $serviceInfo->Description; ?>
-                                                	</textarea>
+                                                	<textarea class="form-control" rows="5" name="service-description" id="service-description" placeholder="Write Service Description"><?= $serviceInfo->Description; ?></textarea>
                                                 </div>
                                             </div>
 
@@ -80,7 +78,10 @@ edit-service.php<?php echo $this->load->view('dashboard/include/header.php'); ?>
                                                 <label for="inputPassword3" class="col-3 col-form-label">Icon</label>
                                                 <div class="col-6">
                                                     <input class="dropify" type="file" name="icon-image" id="icon-image" >
+
                                                     <input type="hidden" name="previous-icon-image" id="previous-icon-image" value="<?= $serviceInfo->Icon; ?>">
+
+                                                    <input type="hidden" name="service-id" id="service-id" value="<?= $serviceInfo->Id; ?>">
                                                 </div>
                                                 <div class="col-3">
                                                 	<img src="<?= base_url(); ?>assets/web2/images/service/<?= $serviceInfo->Icon; ?>" width="200px" height="200px">
