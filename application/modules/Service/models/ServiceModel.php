@@ -24,7 +24,7 @@
 				'Title' => $this->input->post('service-title'),
 				'Icon' => $dbImageName,
 				'Description' => $this->input->post('service-description'),
-				'CreateBy' => $this->session->userdata('adminId'),
+				'CreateBy' => $this->session->userdata('userId'),
 				'CreateDateTime' => date('Y-m-d H:i:s')
 			);
 
@@ -78,7 +78,7 @@
 				'Title' => $this->input->post('service-title'),
 				'Icon' => $dbImageName,
 				'Description' => $this->input->post('service-description'),
-				'UpdateBy' => $this->session->userdata('adminId'),
+				'UpdateBy' => $this->session->userdata('userId'),
 				'UpdateDateTime' => date('Y-m-d H:i:s')
 			);
 

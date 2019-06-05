@@ -27,7 +27,7 @@
 
 		public function Dashboard()
 		{
-			if ($this->session->userdata('adminUserName') == "" || $this->session->userdata('adminPassword') == "")
+			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
 				return redirect('Home/Login');
 			}

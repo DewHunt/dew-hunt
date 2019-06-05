@@ -11,7 +11,6 @@
                             <li>
                                 <a href="<?= base_url(); ?>Admin/Dashboard">
                                     <i class="fe-airplay"></i>
-                                    <!-- <span class="badge badge-success badge-pill float-right">4</span> -->
                                     <span>Dashboards</span>
                                     <!-- <span class="menu-arrow"></span> -->
                                 </a>
@@ -20,16 +19,22 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-airplay"></i>
-                                    <!-- <span class="badge badge-success badge-pill float-right">4</span> -->
                                     <span>Home Content</span>
-                                    <!-- <span class="menu-arrow"></span> -->
+                                    <span class="menu-arrow"></span>
                                 </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="<?= base_url(); ?>Home/Home/Name">Name</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url(); ?>Home/Home/Designation">Designation</a>
+                                    </li>
+                                </ul>
                             </li>
 
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-airplay"></i>
-                                    <!-- <span class="badge badge-success badge-pill float-right">4</span> -->
                                     <span>About Content</span>
                                     <!-- <span class="menu-arrow"></span> -->
                                 </a>
@@ -38,7 +43,6 @@
                             <li>
                                 <a href="<?= base_url(); ?>Service/Service/Index">
                                     <i class="fe-airplay"></i>
-                                    <!-- <span class="badge badge-success badge-pill float-right">4</span> -->
                                     <span>Service Content</span>
                                     <!-- <span class="menu-arrow"></span> -->
                                 </a>
@@ -47,7 +51,6 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-airplay"></i>
-                                    <!-- <span class="badge badge-success badge-pill float-right">4</span> -->
                                     <span>Protfolio Content</span>
                                     <!-- <span class="menu-arrow"></span> -->
                                 </a>
@@ -56,7 +59,6 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-airplay"></i>
-                                    <!-- <span class="badge badge-success badge-pill float-right">4</span> -->
                                     <span>Blog Content</span>
                                     <!-- <span class="menu-arrow"></span> -->
                                 </a>
@@ -65,7 +67,6 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-airplay"></i>
-                                    <!-- <span class="badge badge-success badge-pill float-right">4</span> -->
                                     <span>Contact Content</span>
                                     <!-- <span class="menu-arrow"></span> -->
                                 </a>

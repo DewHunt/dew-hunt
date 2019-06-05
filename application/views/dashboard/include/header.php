@@ -22,6 +22,9 @@
 
         <!-- duDialog CSS -->
         <link href="<?= base_url(); ?>assets/duDialog/css/duDialog.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Tostr.js -->
+        <link  href="<?= base_url(); ?>assets/toastr/css/toastr.min.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>

@@ -19,5 +19,21 @@
 
 			return $query;
 		}
+
+		public function HomeInfo()
+		{
+			$sql = "SELECT * FROM tbl_home WHERE Status = 1 AND Display = 1";
+			$query = $this->db->query($sql)->row();
+
+			return $query;
+		}
+
+		public function HomeDesignationInfo()
+		{
+			$sql = "SELECT * FROM tbl_home_designation WHERE Status = 1 AND Display = 1";
+			$query = $this->db->query($sql)->result();
+
+			return $query;
+		}
 	}
 ?>

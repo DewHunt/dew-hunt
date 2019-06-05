@@ -136,19 +136,22 @@
 
                     $('#service-title').css({'border':'1px solid #cccccc'});
                     $('#service-description').css({'border':'1px solid #cccccc'});
+                    
+                    toastr.options.closeButton = true;
+                    toastr.options.positionClass = "toast-top-center";
 
                     if (title == "")
                     {
-                        // popup.alert({'content': 'Please Fill Up Title Filed'});
                         new duDialog('Error','<b class="text-danger">Please Fill Up Title Filed</b>');
+                        // toastr.error('<b>Please Fill Up Title Filed</b>','Error');
                         $('#service-title').css({'border':'1px solid red'});
                         return false;
                     }
 
                     if (description == "")
                     {
-                        // popup.alert({'content': 'Please Fill Up Description Field'});
                         new duDialog('Error','<b class="text-danger">Please Fill Up Description Field</b>');
+                        // toastr.error('<b>Please Fill Up Description Field</b>','Error');
                         $('#service-description').css({'border':'1px solid red'});
                         return false;
                     }

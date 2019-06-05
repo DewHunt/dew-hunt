@@ -29,9 +29,8 @@
         <!-- END wrapper -->
 
         <!-- JQuery -->
-        <!-- <script src="<?= base_url(); ?>assets/dashboard/assets/jquery/jquery-1.12.4.min.js"></script> -->
-        
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <!-- <script src="<?= base_url(); ?>assets/jquery/jquery-3.4.1.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <!-- Vendor js -->
         <script src="<?= base_url(); ?>assets/dashboard/assets/js/vendor.min.js"></script>
@@ -59,5 +58,8 @@
         
         <!-- duDialog JS -->
         <script src="<?= base_url(); ?>assets/duDialog/js/duDialog.min.js"></script>
+        
+        <!-- Tostr JS -->
+        <script src="<?= base_url(); ?>assets/toastr/js/toastr.min.js"></script>
     </body>
 </html>

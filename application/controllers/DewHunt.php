@@ -12,7 +12,11 @@
 
 		public function index()
 		{
-			$data['serviceInfo'] = $this->DewHuntModel->ServiceInfo();
+			$data = array(
+				'serviceInfo' => $this->DewHuntModel->ServiceInfo(),
+				'homeInfo' => $this->DewHuntModel->HomeInfo(),
+				'homeDesignationInfo' => $this->DewHuntModel->HomeDesignationInfo(),
+			);
 
 			$this->load->view('web2/include/header');
 			$this->load->view('web2/include/main-body',$data);

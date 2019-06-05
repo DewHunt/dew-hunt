@@ -77,14 +77,26 @@
 						<section class="pt-page pt-page-1 section-without-bg section-paddings-0 table" data-id="home">
 							<div class="section-inner">
 								<div class="home-page-block">
-									<h2>Alex Smith</h2>
+									<h2><?= $homeInfo->Name; ?></h2>
 									<div class="owl-carousel text-rotation">
-										<div class="item">
+										<?php
+											foreach ($homeDesignationInfo as $value)
+											{
+										?>
+											<div class="item">
+												<p class="home-page-description">
+													<?= $value->Designation; ?>
+												</p>
+											</div>
+										<?php												
+											}
+										?>
+<!-- 										<div class="item">
 											<p class="home-page-description">Web Designer</p>
 										</div>
 										<div class="item">
 											<p class="home-page-description">Frontend-developer</p>
-										</div>
+										</div> -->
 									</div>
 								</div>
 							</div>

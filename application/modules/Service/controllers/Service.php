@@ -15,15 +15,22 @@
 
 		public function Index()
 		{
-			$data = array(
-				'serviceInfo' => $this->ServiceModel->GetAllServiceInfo()
-			);
-			$this->load->view('list-of-service',$data);
+			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
+			{
+				return redirect('Home/Login');
+			}
+			else
+			{
+				$data = array(
+					'serviceInfo' => $this->ServiceModel->GetAllServiceInfo()
+				);
+				$this->load->view('list-of-service',$data);			
+			}
 		}
 
 		public function ServiceAdd()
 		{
-			if ($this->session->userdata('adminUserName') == "" || $this->session->userdata('adminPassword') == "")
+			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
 				return redirect('Home/Login');
 			}
@@ -35,7 +42,7 @@
 
 		public function ServiceAddAction()
 		{
-			if ($this->session->userdata('adminUserName') == "" || $this->session->userdata('adminPassword') == "")
+			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
 				return redirect('Home/Login');
 			}
@@ -58,7 +65,7 @@
 
 		public function EditService($serviceId)
 		{
-			if ($this->session->userdata('adminUserName') == "" || $this->session->userdata('adminPassword') == "")
+			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
 				return redirect('Home/Login');
 			}
@@ -74,7 +81,7 @@
 
 		public function EditServiceAction()
 		{
-			if ($this->session->userdata('adminUserName') == "" || $this->session->userdata('adminPassword') == "")
+			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
 				return redirect('Home/Login');
 			}
@@ -98,13 +105,12 @@
 
 		public function DeleteService($serviceId)
 		{
-			if ($this->session->userdata('adminUserName') == "" || $this->session->userdata('adminPassword') == "")
+			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
 				return redirect('Home/Login');
 			}
 			else
 			{
-				echo "Working"; exit();
 				$result = $this->ServiceModel->DeleteService($serviceId);
 
 				if ($result)

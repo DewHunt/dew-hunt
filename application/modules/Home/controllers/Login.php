@@ -15,8 +15,8 @@
 		public function Index()
 		{
 			$data['errMsg'] = "";
-			// $this->session->unset_userdata('adminUserName');
-			// $this->session->unset_userdata('adminPassword');
+			// $this->session->unset_userdata('userName');
+			// $this->session->unset_userdata('userPassword');
 
 			$errMsg = $this->input->get('errMsg');
 
@@ -40,9 +40,9 @@
 				if ($value->UserName == $userName && $value->Password == $password)
 				{
 					$sessionInfo = [
-						'adminUserName' => $value->UserName,
-						'adminPassword' => $value->Password,
-						'adminId' => $value->Id
+						'userName' => $value->UserName,
+						'userPassword' => $value->Password,
+						'userId' => $value->Id
 					];
 
 					$this->session->set_userdata($sessionInfo);
