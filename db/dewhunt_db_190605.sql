@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2019 at 02:39 AM
+-- Generation Time: Jun 04, 2019 at 10:26 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -105,66 +105,6 @@ CREATE TABLE `tbl_headers_info` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_home`
---
-
-CREATE TABLE `tbl_home` (
-  `Id` int(11) NOT NULL,
-  `Name` varchar(200) NOT NULL,
-  `Display` tinyint(3) NOT NULL,
-  `CreateBy` int(11) NOT NULL,
-  `CreateDateTime` datetime NOT NULL,
-  `UpdateBy` int(11) NOT NULL,
-  `UpdateDateTime` datetime NOT NULL,
-  `DeleteBy` int(11) NOT NULL,
-  `DeleteDateTime` datetime NOT NULL,
-  `Status` tinyint(4) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_home`
---
-
-INSERT INTO `tbl_home` (`Id`, `Name`, `Display`, `CreateBy`, `CreateDateTime`, `UpdateBy`, `UpdateDateTime`, `DeleteBy`, `DeleteDateTime`, `Status`) VALUES
-(1, 'Dew Hunt', 1, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
-(2, 'Salman Sabbir', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
-(3, 'Muhammad Shishir', 0, 0, '0000-00-00 00:00:00', 1, '2019-06-04 23:08:46', 0, '0000-00-00 00:00:00', 1),
-(4, 'Sajjad', 0, 1, '2019-06-04 19:11:27', 0, '0000-00-00 00:00:00', 1, '2019-06-04 20:16:42', 0),
-(5, 'Salman', 0, 1, '2019-06-04 19:43:25', 0, '0000-00-00 00:00:00', 1, '2019-06-04 20:17:44', 0),
-(6, 'Sabbir', 0, 1, '2019-06-04 19:58:24', 0, '0000-00-00 00:00:00', 1, '2019-06-04 23:08:39', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_home_designation`
---
-
-CREATE TABLE `tbl_home_designation` (
-  `Id` int(11) NOT NULL,
-  `Designation` varchar(300) NOT NULL,
-  `Display` tinyint(3) NOT NULL,
-  `CreateBy` int(11) NOT NULL,
-  `CreateDateTime` datetime NOT NULL,
-  `UpdateBy` int(11) NOT NULL,
-  `UpdateDateTime` datetime NOT NULL,
-  `DeleteBy` int(11) NOT NULL,
-  `DeleteDateTime` datetime NOT NULL,
-  `Status` tinyint(4) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_home_designation`
---
-
-INSERT INTO `tbl_home_designation` (`Id`, `Designation`, `Display`, `CreateBy`, `CreateDateTime`, `UpdateBy`, `UpdateDateTime`, `DeleteBy`, `DeleteDateTime`, `Status`) VALUES
-(1, 'Web Designer', 1, 1, '2019-06-04 20:55:26', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
-(2, 'Web Developer', 1, 1, '2019-06-04 21:00:07', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
-(3, 'Photographer', 1, 1, '2019-06-04 21:00:23', 1, '2019-06-04 23:25:42', 0, '0000-00-00 00:00:00', 1),
-(4, 'Actor', 0, 1, '2019-06-04 23:26:09', 0, '0000-00-00 00:00:00', 1, '2019-06-04 23:32:22', 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_latest_news`
 --
 
@@ -220,8 +160,12 @@ CREATE TABLE `tbl_services` (
 
 INSERT INTO `tbl_services` (`Id`, `Title`, `Icon`, `Description`, `CreateBy`, `CreateDateTime`, `UpdateBy`, `UpdateDateTime`, `DeleteBy`, `DeleteDateTime`, `Status`) VALUES
 (1, 'Web Development.', 'web_development_ok_icon.png', 'I am a profession Web Developer. I have developed several websites with PHP based framework CodeIgniter.', 1, '2019-05-20 22:52:47', 1, '2019-05-29 16:41:38', 0, '0000-00-00 00:00:00', 1),
-(2, 'Web Design', 'web_design_icon.png', 'I am a Professional Web Designer.', 1, '2019-05-24 16:10:43', 1, '2019-06-04 10:29:18', 0, '0000-00-00 00:00:00', 1),
-(3, 'Test', 'test_icon.jpg', 'Test', 1, '2019-05-29 16:43:40', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1);
+(2, 'Web Design', 'web_design_icon.png', 'I am a Professional Web Designer.', 1, '2019-05-24 16:10:43', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
+(3, 'Test', 'test_icon.jpg', 'Test', 1, '2019-05-29 16:43:40', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
+(4, '', '', '', 1, '2019-05-29 23:28:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
+(5, '', '', '', 1, '2019-05-30 22:47:28', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
+(6, '', '', '', 1, '2019-05-30 22:47:59', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1),
+(7, '', '', '', 1, '2019-05-30 22:56:15', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -295,18 +239,6 @@ ALTER TABLE `tbl_headers_info`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `tbl_home`
---
-ALTER TABLE `tbl_home`
-  ADD PRIMARY KEY (`Id`);
-
---
--- Indexes for table `tbl_home_designation`
---
-ALTER TABLE `tbl_home_designation`
-  ADD PRIMARY KEY (`Id`);
-
---
 -- Indexes for table `tbl_latest_news`
 --
 ALTER TABLE `tbl_latest_news`
@@ -371,18 +303,6 @@ ALTER TABLE `tbl_headers_info`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbl_home`
---
-ALTER TABLE `tbl_home`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `tbl_home_designation`
---
-ALTER TABLE `tbl_home_designation`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `tbl_latest_news`
 --
 ALTER TABLE `tbl_latest_news`
@@ -398,7 +318,7 @@ ALTER TABLE `tbl_portfolios`
 -- AUTO_INCREMENT for table `tbl_services`
 --
 ALTER TABLE `tbl_services`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_services_footer`
