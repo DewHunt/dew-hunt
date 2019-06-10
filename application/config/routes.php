@@ -53,4 +53,4 @@ $route['default_controller'] = 'dewhunt';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['login'] = 'home/login/index';
+$route['login'] = 'login/index';

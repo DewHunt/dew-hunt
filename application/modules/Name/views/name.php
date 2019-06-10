@@ -19,7 +19,7 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?= base_url(); ?>Admin/Dashboard">Dew Hunt</a></li>
                                 <li class="breadcrumb-item active">Home Content</li>
-                                <li class="breadcrumb-item active">Designation</li>
+                                <li class="breadcrumb-item active">Name</li>
                             </ol>
                         </div>
                         <h4 class="page-title">Home Content</h4>
@@ -47,8 +47,8 @@
                                         <a href="" class="btn btn-success waves-effect waves-light mb-2" data-animation="fadein">
                                         	<i class="mdi mdi-magnify-minus mr-1"></i>Search
                                         </a>
-                                        <a href="<?= base_url(); ?>Home/Home/AddDesignation" class="btn btn-primary waves-effect waves-light mb-2" data-animation="fadein">
-                                        	<i class="mdi mdi-plus-circle mr-1"></i>Add New Designation
+                                        <a href="<?= base_url(); ?>Name/Name/AddName" class="btn btn-primary waves-effect waves-light mb-2" data-animation="fadein">
+                                        	<i class="mdi mdi-plus-circle mr-1"></i>Add New Name
                                         </a>
                                     </div>
                                 </div><!-- end col-->
@@ -82,25 +82,25 @@
                                     <thead>
                                         <tr>
                                             <th>SL</th>
-                                            <th>Designation</th>
-                                            <th style="width: 300px;">Action</th>
+                                            <th>Name</th>
+                                            <th style="width: 220px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                             $sl = 1;
-                                            foreach ($designationInfo as $value)
+                                            foreach ($homeInfo as $value)
                                             {
                                         ?>
                                             <tr>
                                                 <td><?= $sl; ?></td>
-                                                <td><?= $value->Designation; ?></td>
+                                                <td><?= $value->Name; ?></td>
                                                 <td>
-                                                    <a href="<?= base_url(); ?>Home/Home/EditDesignation/<?= $value->Id; ?>">
+                                                    <a href="<?= base_url(); ?>Name/Name/EditName/<?= $value->Id; ?>">
                                                     	<button class="btn btn-xs btn-outline-primary">Edit</button>
                                                     	
                                                     </a>
-                                                    <a href="<?= base_url(); ?>Home/Home/DeleteDesignation/<?= $value->Id; ?>" onclick="return confirm('Are you sure, want to delete this?')">
+                                                    <a href="<?= base_url(); ?>Name/Name/DeleteName/<?= $value->Id; ?>" onclick="return confirm('Are you sure, want to delete this?')">
                                                     	<button class="btn btn-xs btn-outline-danger">Delete</button>
                                                     	
                                                     </a>
@@ -108,24 +108,16 @@
 		                                            	if ($value->Display == 1)
 		                                            	{
 		                                            ?>
-	                                                    <a href="<?= base_url(); ?>Home/Home/PublishedDesignation/<?= $value->Id; ?>">
+	                                                    <a href="<?= base_url(); ?>Name/Name/PublishedAndUnpublished/<?= $value->Id; ?>">
 	                                                    	<button class="btn btn-xs btn-secondary" disabled>Published</button>
-	                                                    </a>
-
-	                                                    <a href="<?= base_url(); ?>Home/Home/UnpublishedDesignation/<?= $value->Id; ?>">
-	                                                    	<button class="btn btn-xs btn-outline-warning">Unpublished</button>
 	                                                    </a>
 	                                                <?php
 		                                            	}
 		                                            	else
 		                                            	{
 		                                            ?>
-	                                                    <a href="<?= base_url(); ?>Home/Home/PublishedDesignation/<?= $value->Id; ?>">
+	                                                    <a href="<?= base_url(); ?>Name/Name/PublishedAndUnpublished/<?= $value->Id; ?>">
 	                                                    	<button class="btn btn-xs btn-outline-success">Published</button>
-	                                                    </a>
-
-	                                                    <a href="<?= base_url(); ?>Home/Home/UnpublishedDesignation/<?= $value->Id; ?>">
-	                                                    	<button class="btn btn-xs btn-secondary" disabled="">Unpublished</button>
 	                                                    </a>
 	                                                <?php
 		                                            	}

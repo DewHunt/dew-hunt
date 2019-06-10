@@ -18,11 +18,11 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?= base_url(); ?>Admin/Dashboard">Dew Hunt</a></li>
-                                <li class="breadcrumb-item active">Home Content</li>
-                                <li class="breadcrumb-item active">Name</li>
+                                <li class="breadcrumb-item active">About Content</li>
+                                <li class="breadcrumb-item active">About</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Home Content</h4>
+                        <h4 class="page-title">About Content</h4>
                     </div>
                 </div>
             </div>     
@@ -47,8 +47,8 @@
                                         <a href="" class="btn btn-success waves-effect waves-light mb-2" data-animation="fadein">
                                         	<i class="mdi mdi-magnify-minus mr-1"></i>Search
                                         </a>
-                                        <a href="<?= base_url(); ?>Home/Home/AddName" class="btn btn-primary waves-effect waves-light mb-2" data-animation="fadein">
-                                        	<i class="mdi mdi-plus-circle mr-1"></i>Add New Name
+                                        <a href="<?= base_url(); ?>About/About/AddAbout" class="btn btn-primary waves-effect waves-light mb-2" data-animation="fadein">
+                                        	<i class="mdi mdi-plus-circle mr-1"></i>Add New About
                                         </a>
                                     </div>
                                 </div><!-- end col-->
@@ -82,33 +82,45 @@
                                     <thead>
                                         <tr>
                                             <th>SL</th>
-                                            <th>Name</th>
-                                            <th style="width: 220px;">Action</th>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th>Keyword</th>
+                                            <th>DOB</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Freelance</th>
+                                            <th>Address</th>
+                                            <th style="width: 500px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                             $sl = 1;
-                                            foreach ($homeInfo as $value)
+                                            foreach ($aboutInfo as $value)
                                             {
                                         ?>
                                             <tr>
                                                 <td><?= $sl; ?></td>
-                                                <td><?= $value->Name; ?></td>
+                                                <td><?= $value->Title; ?></td>
+                                                <td><?= $value->Description; ?></td>
+                                                <td><?= $value->Keyword; ?></td>
+                                                <td><?= $value->Dob; ?></td>
+                                                <td><?= $value->Email; ?></td>
+                                                <td><?= $value->Phone; ?></td>
+                                                <td><?= $value->Freelance; ?></td>
+                                                <td><?= $value->Address; ?></td>
                                                 <td>
-                                                    <a href="<?= base_url(); ?>Home/Home/EditName/<?= $value->Id; ?>">
-                                                    	<button class="btn btn-xs btn-outline-primary">Edit</button>
-                                                    	
+                                                    <a href="<?= base_url(); ?>Service/Service/EditService/<?= $value->Id; ?>">
+                                                        <button class="btn btn-xs btn-outline-primary">Edit</button>
                                                     </a>
-                                                    <a href="<?= base_url(); ?>Home/Home/DeleteName/<?= $value->Id; ?>" onclick="return confirm('Are you sure, want to delete this?')">
-                                                    	<button class="btn btn-xs btn-outline-danger">Delete</button>
-                                                    	
+                                                    <a href="<?= base_url(); ?>Service/Service/DeleteService/<?= $value->Id; ?>" onclick="return confirm('Are you sure, want to delete this?')">
+                                                        <button class="btn btn-xs btn-outline-danger">Delete</button>
                                                     </a>
                                                     <?php
 		                                            	if ($value->Display == 1)
 		                                            	{
 		                                            ?>
-	                                                    <a href="<?= base_url(); ?>Home/Home/PublishedName/<?= $value->Id; ?>">
+	                                                    <a href="<?= base_url(); ?>About/About/Published/<?= $value->Id; ?>">
 	                                                    	<button class="btn btn-xs btn-secondary" disabled>Published</button>
 	                                                    </a>
 	                                                <?php
@@ -116,7 +128,7 @@
 		                                            	else
 		                                            	{
 		                                            ?>
-	                                                    <a href="<?= base_url(); ?>Home/Home/PublishedName/<?= $value->Id; ?>">
+	                                                    <a href="<?= base_url(); ?>About/About/Published/<?= $value->Id; ?>">
 	                                                    	<button class="btn btn-xs btn-outline-success">Published</button>
 	                                                    </a>
 	                                                <?php

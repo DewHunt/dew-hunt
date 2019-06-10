@@ -20,7 +20,7 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?= base_url(); ?>Admin/Dashboard">Dew Hunt</a></li>
                                 <li class="breadcrumb-item active">Home Content</li>
-                                <li class="breadcrumb-item"><a href="<?= base_url(); ?>Home/Home/Name">Name</a></li>
+                                <li class="breadcrumb-item"><a href="<?= base_url(); ?>Name/Name/Index">Name</a></li>
                                 <li class="breadcrumb-item active">Edit Name</li>
                             </ol>
                         </div>
@@ -41,7 +41,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="text-lg-right mt-3 mt-lg-0">
-                                    <a href="<?= base_url(); ?>Home/Home/Name" class="btn btn-primary waves-effect waves-light" data-animation="fadein">
+                                    <a href="<?= base_url(); ?>Name/Name/Index" class="btn btn-primary waves-effect waves-light" data-animation="fadein">
                                         <i class="mdi mdi-view-list mr-1"></i> View List Of Name
                                     </a>
                                 </div>
@@ -56,7 +56,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Home/Home/EditNameAction">
+                            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Name/Name/EditNameAction">
                                 <div class="form-group row mb-3">
                                     <label for="inputEmail3" class="col-3 col-form-label">
                                         Name <span class="text-danger">*</span>

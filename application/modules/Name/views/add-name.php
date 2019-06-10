@@ -19,12 +19,12 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?= base_url(); ?>Admin/Dashboard">Dew Hunt</a></li>
-                                <li class="breadcrumb-item active">Home Contet</li>
-                                <li class="breadcrumb-item"><a href="<?= base_url(); ?>Home/Home/Designation">Designation</a></li>
-                                <li class="breadcrumb-item active">Add New Designation</li>
+                                <li class="breadcrumb-item active">Home Content</li>
+                                <li class="breadcrumb-item"><a href="<?= base_url(); ?>Name/Name/Index">Name</a></li>
+                                <li class="breadcrumb-item active">Add New Name</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Service Content</h4>
+                        <h4 class="page-title">Home Content</h4>
                     </div>
                 </div>
             </div>     
@@ -36,13 +36,13 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <h5 style="color: red;">
-                                    *** Enter All The Information and Hit on Save Button For Create New Designation ***
+                                    *** Enter All The Information and Hit on Save Button For Create New Name ***
                                 </h5>
                             </div>
                             <div class="col-lg-4">
                                 <div class="text-lg-right mt-3 mt-lg-0">
-                                    <a href="<?= base_url(); ?>Home/Home/Designation" class="btn btn-primary waves-effect waves-light" data-animation="fadein">
-                                        <i class="mdi mdi-view-list mr-1"></i> View List Of Designation
+                                    <a href="<?= base_url(); ?>Name/Name/Index" class="btn btn-primary waves-effect waves-light" data-animation="fadein">
+                                        <i class="mdi mdi-view-list mr-1"></i> View List Of Name
                                     </a>
                                 </div>
                             </div><!-- end col-->
@@ -56,13 +56,13 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Home/Home/AddDesignationAction">
+                            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Name/Name/AddNameAction">
                                 <div class="form-group row mb-3">
                                     <label for="inputEmail3" class="col-3 col-form-label">
-                                        Designation <span class="text-danger">*</span>
+                                        Name <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" name="designation" id="designation" placeholder="Write Your Designation">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Write Your Name">
                                     </div>
                                 </div>
 
@@ -88,22 +88,22 @@
     },5000);
 
     function removeError(){
-        $('#designation').css({'border':'1px solid #cccccc'});
+        $('#name').css({'border':'1px solid #cccccc'});
     }
 
     function validation(){
-        var designation = $('#designation').val();
+        var name = $('#name').val();
 
-        $('#designation').css({'border':'1px solid #cccccc'});
+        $('#name').css({'border':'1px solid #cccccc'});
         
         toastr.options.closeButton = true;
         toastr.options.positionClass = "toast-top-center";
 
-        if (designation == "")
+        if (name == "")
         {
-            new duDialog('Error','<b class="text-danger">Please Fill Up Designation Filed</b>');
-            // toastr.error('<b>Please Fill Up Designation Filed</b>','Error');
-            $('#designation').css({'border':'1px solid red'});
+            new duDialog('Error','<b class="text-danger">Please Fill Up Name Filed</b>');
+            // toastr.error('<b>Please Fill Up Name Filed</b>','Error');
+            $('#name').css({'border':'1px solid red'});
             return false;
         }
     }

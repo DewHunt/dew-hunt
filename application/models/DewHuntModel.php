@@ -14,7 +14,7 @@
 
 		public function ServiceInfo()
 		{
-			$sql = "SELECT * FROM tbl_services WHERE Status = 1";
+			$sql = "SELECT * FROM tbl_services WHERE Display = 1 AND Status = 1";
 			$query = $this->db->query($sql)->result();
 
 			return $query;

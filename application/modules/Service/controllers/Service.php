@@ -17,7 +17,7 @@
 		{
 			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
-				return redirect('Home/Login');
+				return redirect('Login');
 			}
 			else
 			{
@@ -32,7 +32,7 @@
 		{
 			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
-				return redirect('Home/Login');
+				return redirect('Login');
 			}
 			else
 			{
@@ -44,7 +44,7 @@
 		{
 			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
-				return redirect('Home/Login');
+				return redirect('Login');
 			}
 			else
 			{
@@ -67,7 +67,7 @@
 		{
 			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
-				return redirect('Home/Login');
+				return redirect('Login');
 			}
 			else
 			{
@@ -83,7 +83,7 @@
 		{
 			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
-				return redirect('Home/Login');
+				return redirect('Login');
 			}
 			else
 			{
@@ -107,7 +107,7 @@
 		{
 			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
-				return redirect('Home/Login');
+				return redirect('Login');
 			}
 			else
 			{
@@ -121,6 +121,52 @@
 				else
 				{
 					$this->session->set_userdata('errMsg','Service Not Deleted');
+					redirect(base_url()."Service/Service/Index");
+				}
+			}
+		}
+
+		public function Published($serviceId)
+		{
+			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
+			{
+				return redirect('Login');
+			}
+			else
+			{
+				$result = $this->CommonModel->Published('tbl_services',$serviceId);
+
+				if ($result)
+				{
+					$this->session->set_userdata('msg','Successfully Published Service On Website');
+					redirect(base_url()."Service/Service/Index");
+				}
+				else
+				{
+					$this->session->set_userdata('errMsg','Service Not Published');
+					redirect(base_url()."Service/Service/Index");
+				}
+			}
+		}
+
+		public function Unpublished($serviceId)
+		{
+			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
+			{
+				return redirect('Login');
+			}
+			else
+			{
+				$result = $this->CommonModel->Unpublished('tbl_services',$serviceId);
+
+				if ($result)
+				{
+					$this->session->set_userdata('msg','Successfully Unublished Service On Website');
+					redirect(base_url()."Service/Service/Index");
+				}
+				else
+				{
+					$this->session->set_userdata('errMsg','Service Not Unpublished');
 					redirect(base_url()."Service/Service/Index");
 				}
 			}

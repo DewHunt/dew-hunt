@@ -35,7 +35,7 @@
                                 </div>
                                     <p style="color: red;"><?= $errMsg; ?></p>
 
-                                <form method="POST" action="<?= base_url(); ?>Home/Login/LoginCheck">
+                                <form method="POST" action="<?= base_url(); ?>Login/LoginCheck">
 
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">User Name</label>
@@ -66,7 +66,7 @@
                         <div class="row mt-3">
                             <div class="col-12 text-center">
                                 <p>
-                                    <a href="pages-recoverpw.html" class="text-white-50 ml-1">Forgot your password?</a>
+                                    <a href="" class="text-white-50 ml-1">Forgot your password?</a>
                                 </p>
                                 <p class="text-white-50">
                                     Don't have an account? 

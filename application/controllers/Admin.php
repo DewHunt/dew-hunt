@@ -29,7 +29,8 @@
 		{
 			if ($this->session->userdata('userName') == "" || $this->session->userdata('userPassword') == "")
 			{
-				return redirect('Home/Login');
+				$errMsg = "Please Login By Your User Id and Password";
+				redirect(base_url()."Login/Index?errMsg=$errMsg");
 			}
 			else
 			{

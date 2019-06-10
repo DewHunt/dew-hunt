@@ -173,7 +173,7 @@
                             <div class="dropdown-divider"></div>
 
                             <!-- item-->
-                            <a href="<?= base_url(); ?>Home/Logout/Index" class="dropdown-item notify-item">
+                            <a href="<?= base_url(); ?>Logout/Index" class="dropdown-item notify-item">
                                 <i class="fe-log-out"></i>
                                 <span>Logout</span>
                             </a>

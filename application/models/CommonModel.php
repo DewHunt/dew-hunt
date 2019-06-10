@@ -69,5 +69,57 @@
 				return $dbImageName;
 			}
 		}
+
+		public function Published($table,$id)
+		{
+			$publishedSql = "UPDATE $table SET Display = 1 WHERE Id = $id";
+
+			$publishedQuery = $this->db->query($publishedSql);
+
+			if ($publishedQuery)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		public function Unpublished($table,$id)
+		{
+			$unpublishedSql = "UPDATE $table SET Display = 0 WHERE Id = $id";
+
+			$unpublishedQuery = $this->db->query($unpublishedSql);
+
+			if ($unpublishedQuery)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		public function PublishedAndUnpublished($table,$id)
+		{
+			$removePublishedSql = "UPDATE $table SET Display = 0 WHERE Display = 1 AND Status = 1";
+
+			$removePublishedQuery = $this->db->query($removePublishedSql);
+
+			$setPublishedSql = "UPDATE $table SET Display = 1 WHERE Id = $id";
+
+			$setPublishedQuery = $this->db->query($setPublishedSql);
+
+			if ($setPublishedQuery)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 ?>

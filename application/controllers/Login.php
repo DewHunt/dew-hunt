@@ -51,7 +51,7 @@
 				else
 				{
 					$errMsg = "Login Failed. User Name Or Password Doesn't Matched";
-					redirect(base_url()."Home/Login/Index?errMsg=$errMsg");
+					redirect(base_url()."Login/Index?errMsg=$errMsg");
 				}
 			}
 		}

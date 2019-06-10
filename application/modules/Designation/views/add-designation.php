@@ -19,12 +19,12 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?= base_url(); ?>Admin/Dashboard">Dew Hunt</a></li>
-                                <li class="breadcrumb-item active">Home Content</li>
-                                <li class="breadcrumb-item"><a href="<?= base_url(); ?>Home/Home/Designation">Designation</a></li>
-                                <li class="breadcrumb-item active">Edit Designation</li>
+                                <li class="breadcrumb-item active">Home Contet</li>
+                                <li class="breadcrumb-item"><a href="<?= base_url(); ?>Designation/Designation/Index">Designation</a></li>
+                                <li class="breadcrumb-item active">Add New Designation</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Home Content</h4>
+                        <h4 class="page-title">Service Content</h4>
                     </div>
                 </div>
             </div>     
@@ -36,12 +36,12 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <h5 style="color: red;">
-                                    *** Enter All The Information and Hit on Save Button For Edit Designation ***
+                                    *** Enter All The Information and Hit on Save Button For Create New Designation ***
                                 </h5>
                             </div>
                             <div class="col-lg-4">
                                 <div class="text-lg-right mt-3 mt-lg-0">
-                                    <a href="<?= base_url(); ?>Home/Home/Designation" class="btn btn-primary waves-effect waves-light" data-animation="fadein">
+                                    <a href="<?= base_url(); ?>Designation/Designation/Index" class="btn btn-primary waves-effect waves-light" data-animation="fadein">
                                         <i class="mdi mdi-view-list mr-1"></i> View List Of Designation
                                     </a>
                                 </div>
@@ -56,13 +56,13 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Home/Home/EditDesignationAction">
+                            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>Designation/Designation/AddDesignationAction">
                                 <div class="form-group row mb-3">
                                     <label for="inputEmail3" class="col-3 col-form-label">
                                         Designation <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" name="designation" id="designation" placeholder="Write Your Designation" value="<?= $designationInfo->Designation; ?>">
+                                        <input type="text" class="form-control" name="designation" id="designation" placeholder="Write Your Designation">
                                     </div>
                                 </div>
 
@@ -71,8 +71,6 @@
                                         <input type="submit" class="btn btn-outline-primary waves-effect waves-light" name="save" id="save" value="Save" onclick="return validation()">
 
                                         <input type="reset" class="btn btn-outline-danger waves-effect waves-light" name="reset" value="Reset" onclick="return removeError()">
-
-                                        <input type="hidden" name="designation-id" value="<?= $designationInfo->Id; ?>">
                                     </div>
                                 </div>
                             </form>

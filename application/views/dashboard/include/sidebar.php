@@ -24,10 +24,10 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="<?= base_url(); ?>Home/Home/Name">Name</a>
+                                        <a href="<?= base_url(); ?>Name/Name/Index">Name</a>
                                     </li>
                                     <li>
-                                        <a href="<?= base_url(); ?>Home/Home/Designation">Designation</a>
+                                        <a href="<?= base_url(); ?>Designation/Designation/Index">Designation</a>
                                     </li>
                                 </ul>
                             </li>
@@ -36,8 +36,19 @@
                                 <a href="javascript: void(0);">
                                     <i class="fe-airplay"></i>
                                     <span>About Content</span>
-                                    <!-- <span class="menu-arrow"></span> -->
+                                    <span class="menu-arrow"></span>
                                 </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="<?= base_url(); ?>About/About/Index">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url(); ?>Image/Image/Index">Image</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url(); ?>Icon/Icon/Index">Icon</a>
+                                    </li>
+                                </ul>
                             </li>
 
                             <li>

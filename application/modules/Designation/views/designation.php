@@ -18,10 +18,11 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?= base_url(); ?>Admin/Dashboard">Dew Hunt</a></li>
-                                <li class="breadcrumb-item active">Service Content</li>
+                                <li class="breadcrumb-item active">Home Content</li>
+                                <li class="breadcrumb-item active">Designation</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Service Content</h4>
+                        <h4 class="page-title">Home Content</h4>
                     </div>
                 </div>
             </div>     
@@ -46,8 +47,8 @@
                                         <a href="" class="btn btn-success waves-effect waves-light mb-2" data-animation="fadein">
                                         	<i class="mdi mdi-magnify-minus mr-1"></i>Search
                                         </a>
-                                        <a href="<?= base_url(); ?>Service/Service/ServiceAdd" class="btn btn-primary waves-effect waves-light mb-2" data-animation="fadein">
-                                        	<i class="mdi mdi-plus-circle mr-1"></i>Add Service Content
+                                        <a href="<?= base_url(); ?>Designation/Designation/AddDesignation" class="btn btn-primary waves-effect waves-light mb-2" data-animation="fadein">
+                                        	<i class="mdi mdi-plus-circle mr-1"></i>Add New Designation
                                         </a>
                                     </div>
                                 </div><!-- end col-->
@@ -81,57 +82,53 @@
                                     <thead>
                                         <tr>
                                             <th>SL</th>
-                                            <th>Title</th>
-                                            <th>Description</th>
-                                            <th>Icon</th>
+                                            <th>Designation</th>
                                             <th style="width: 300px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                             $sl = 1;
-                                            foreach ($serviceInfo as $value)
+                                            foreach ($designationInfo as $value)
                                             {
                                         ?>
                                             <tr>
                                                 <td><?= $sl; ?></td>
-                                                <td><?= $value->Title; ?></td>
-                                                <td><?= $value->Description; ?></td>
+                                                <td><?= $value->Designation; ?></td>
                                                 <td>
-                                                    <img src="<?= base_url(); ?>assets/web2/images/service/<?= $value->Icon; ?>" width="50px" height="50px">
-                                                </td>
-                                                <td>
-                                                    <a href="<?= base_url(); ?>Service/Service/EditService/<?= $value->Id; ?>">
-                                                        <button class="btn btn-xs btn-outline-primary">Edit</button>
+                                                    <a href="<?= base_url(); ?>Designation/Designation/EditDesignation/<?= $value->Id; ?>">
+                                                    	<button class="btn btn-xs btn-outline-primary">Edit</button>
+                                                    	
                                                     </a>
-                                                    <a href="<?= base_url(); ?>Service/Service/DeleteService/<?= $value->Id; ?>" onclick="return confirm('Are you sure, want to delete this?')">
-                                                        <button class="btn btn-xs btn-outline-danger">Delete</button>
+                                                    <a href="<?= base_url(); ?>Designation/Designation/DeleteDesignation/<?= $value->Id; ?>" onclick="return confirm('Are you sure, want to delete this?')">
+                                                    	<button class="btn btn-xs btn-outline-danger">Delete</button>
+                                                    	
                                                     </a>
                                                     <?php
-                                                        if ($value->Display == 1)
-                                                        {
-                                                    ?>
-                                                        <a href="<?= base_url(); ?>Service/Service/Published/<?= $value->Id; ?>">
-                                                            <button class="btn btn-xs btn-secondary" disabled>Published</button>
-                                                        </a>
+		                                            	if ($value->Display == 1)
+		                                            	{
+		                                            ?>
+	                                                    <a href="<?= base_url(); ?>Designation/Designation/Published/<?= $value->Id; ?>">
+	                                                    	<button class="btn btn-xs btn-secondary" disabled>Published</button>
+	                                                    </a>
 
-                                                        <a href="<?= base_url(); ?>Service/Service/Unpublished/<?= $value->Id; ?>">
-                                                            <button class="btn btn-xs btn-outline-warning">Unpublished</button>
-                                                        </a>
-                                                    <?php
-                                                        }
-                                                        else
-                                                        {
-                                                    ?>
-                                                        <a href="<?= base_url(); ?>Service/Service/Published/<?= $value->Id; ?>">
-                                                            <button class="btn btn-xs btn-outline-success">Published</button>
-                                                        </a>
+	                                                    <a href="<?= base_url(); ?>Designation/Designation/Unpublished/<?= $value->Id; ?>">
+	                                                    	<button class="btn btn-xs btn-outline-warning">Unpublished</button>
+	                                                    </a>
+	                                                <?php
+		                                            	}
+		                                            	else
+		                                            	{
+		                                            ?>
+	                                                    <a href="<?= base_url(); ?>Designation/Designation/Published/<?= $value->Id; ?>">
+	                                                    	<button class="btn btn-xs btn-outline-success">Published</button>
+	                                                    </a>
 
-                                                        <a href="<?= base_url(); ?>Service/Service/Unpublished/<?= $value->Id; ?>">
-                                                            <button class="btn btn-xs btn-secondary" disabled="">Unpublished</button>
-                                                        </a>
-                                                    <?php
-                                                        }
+	                                                    <a href="<?= base_url(); ?>Designation/Designation/Unpublished/<?= $value->Id; ?>">
+	                                                    	<button class="btn btn-xs btn-secondary" disabled="">Unpublished</button>
+	                                                    </a>
+	                                                <?php
+		                                            	}
                                                     ?>
                                                 </td>
                                             </tr>
